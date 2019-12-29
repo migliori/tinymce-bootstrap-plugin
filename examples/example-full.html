@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tinyMce Bootstrap Plugin - Example Full</title>
+    <meta name="description" content="">
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Fonts CSS -->
+    <link href="tinymce/plugins/bootstrap/css/iconpicker/css/material-design-iconic-font.min.css" rel="stylesheet">
+    <link href="tinymce/plugins/bootstrap/prism/prism.css" type="text/css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        @font-face {
+            font-family: 'source_code_proregular';
+            src: url('fonts/sourcecodepro-regular-webfont.eot');
+            src: url('fonts/sourcecodepro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+                 url('fonts/sourcecodepro-regular-webfont.woff2') format('woff2'),
+                 url('fonts/sourcecodepro-regular-webfont.woff') format('woff'),
+                 url('fonts/sourcecodepro-regular-webfont.ttf') format('truetype'),
+                 url('fonts/sourcecodepro-regular-webfont.svg#source_code_proregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+
+        }
+        pre {
+            display: block;
+            margin: auto;
+            padding: 0 !important;
+            border: none !important;
+            border-radius: 0;
+            font-family: 'source_code_proregular';
+            font-size: 12px;
+            word-break: break-all;
+            background: none;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="h2 text-left">Tinymce Bootstrap Plugin - Full example</h1>
+        <p>&nbsp;</p>
+        <p><small>To insert a new paragraph after any Bootstrap element, use <kbd>alt+enter</kbd> (<kbd>option+enter</kbd> on MAC)</small></p>
+        <p><small>To insert a line break (<code>&lt;br&gt;</code>), use <kbd>cmd+enter</kbd> (<kbd>⌘+enter</kbd> on MAC)</small></p>
+        <p>&nbsp;</p>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div class="form-group">
+                    <textarea id="textarea-1" name="html" cols="100" rows="20" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <textarea id="textarea-2" name="html" cols="100" rows="20" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <pre><code class="language-javascript">
+&lt;script type=&quot;text/javascript&quot;&gt;
+    $(document).ready(function () {
+        if (typeof(base_url) == &quot;undefined&quot;) {
+            var base_url = location.protocol + &#039;//&#039; + location.host + &#039;/&#039;;
+        }
+        $(&quot;textarea&quot;).tinymce({
+            script_url : base_url + &#039;tinymce-bootstrap-plugin/examples/tinymce/tinymce.min.js&#039;, // replace with your own path
+            document_base_url: base_url,
+            plugins: [
+                &quot;bootstrap&quot;
+            ],
+            bootstrapConfig: {
+                bootstrapConfig: {
+                    &#039;imagesPath&#039;: &#039;/tinymce-bootstrap-plugin/examples/img/&#039;, // replace with your images folder path
+                    &#039;bootstrapIconFont&#039;: &#039;materialdesign&#039;
+                }
+            },
+            toolbar: &quot;bootstrap&quot;
+        });
+    });
+&lt;/script&gt;
+    </code></pre>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Demo syntax highlighting code -->
+    <script type="text/javascript" src="tinymce/plugins/bootstrap/prism/prism.min.js"></script>
+    <!-- tinymce -->
+    <script src="tinymce/jquery.tinymce.min.js"></script>
+    <script type="text/javascript">
+    if (typeof(base_url) == "undefined") {
+        var base_url = location.protocol + '//' + location.host + '/';
+    }
+    $(document).ready(function() {
+        $("textarea").tinymce({
+            script_url: base_url + 'tinymce-bootstrap-plugin/examples/tinymce/tinymce.min.js', // replace with your own path
+            document_base_url: base_url,
+            plugins: [
+                "bootstrap"
+            ],
+            bootstrapConfig: {
+                'type': 'buttongroup', // dropdownMenu|buttongroup
+                'imagesPath': '/tinymce-bootstrap-plugin/examples/img/', // replace with your images folder path
+                'bootstrapIconFont': 'materialdesign'
+            },
+            language: 'fr_FR',
+            toolbar: "bootstrap"
+        });
+    });
+    </script>
+</body>
+
+</html>

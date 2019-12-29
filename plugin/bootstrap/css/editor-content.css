@@ -1,0 +1,67 @@
+.active {
+    position: relative;
+}
+
+.active:not(.table):after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 120%;
+    height: 140%;
+    border: 1px dashed #aaa;
+}
+
+.breadcrumb .active:after, .nav li.active:after, .tab-pane:after {
+    content: ''; !important
+    display: none; !important
+}
+
+body.hasVisual [class*="col-"]:hover:before {
+    content: " (" attr(class) ") ";
+    display: inline-block;
+    z-index: 1000;
+    line-height: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: auto;
+    height: 30px;
+    padding: 0 10px;
+    color: #333;
+    background: rgba(204,204,204,0.8);
+}
+
+body.hasVisual [class*="col-"]:hover:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 1px dotted #777;
+}
+
+input.btn.active {
+    border: 5px solid #fff;
+    outline: 1px dashed #aaa;
+}
+
+#tinymce .row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+#tinymce .collapse {
+    display: block; !important
+}
+
+#tinymce .tab-content .tab-pane {
+    display: block; !important;
+    border: 1px dashed #ccc;
+    margin-bottom: 5px;
+}

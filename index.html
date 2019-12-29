@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>tinyMce Bootstrap Plugin - Extend tinyMce using Any Bootstrap Element / Any Custom Code Snippet</title>
+        <meta name="description" content="Add Bootstrap toolbar to tinyMce">
+        <meta name="author" content="Gilles Migliori">
+        <meta name="copyright" content="Gilles Migliori">
+        <!-- Bootstrap CSS -->
+        <link href="documentation/assets/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Documentation CSS -->
+        <link href="documentation/assets/css/documentation.css" rel="stylesheet">
+        <!-- Fonts CSS -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500" rel="stylesheet" type="text/css">
+        <!-- code prettify -->
+        <link rel="stylesheet" href="documentation/assets/prism/prism.min.css" media="screen">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body data-spy="scroll" data-target="#navbar-left-wrapper" data-offset="180">
+        <div id="navbar-left-wrapper">
+            <ul id="navbar-left" class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#home">Home</a></li>
+                <li><a href="#requirements">Requirements</a></li>
+                <li><a href="#quick-start-guide">Quick Start Guide</a></li>
+                <li><a href="#options">Options</a></li>
+                <li><a href="#examples-with-code">Examples with code</a></li>
+                <li><a href="#use-your-own-bootstrap-css">Use your own bootstrap css</a></li>
+                <li><a href="#snippet-tool">Snippet tool</a></li>
+                <li><a href="#select-toolbar-elements">Select toolbar elements</a></li>
+                <li><a href="#change-language">Change language</a></li>
+                <li><a href="http://tinymce-bootstrap-plugin.creation-site.org/index.html">Online demo</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+                <li><a href="#changelog">Changelog</a></li>
+                <li><a href="#sources-and-credits">Sources &amp; Credits</a></li>
+            </ul>
+            <!-- navbar-left -->
+        </div>
+        <!-- navbar-left-wrapper -->
+        <img src="documentation/assets/images/tinymce-bootstrap-plugin-small-preview-transparent.png" alt="tinyMce Bootstrap Plugin" id="navbar-logo">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
+                    <h1 class="main-title" id="home">TINYMCE BOOTSTRAP PLUGIN</h1>
+                    <section>
+                        <h2>Extend tinyMce using <strong>Any Bootstrap Element</strong> &amp; <strong>Any Custom Code Snippet</strong></h2>
+                        <div class="mb-md">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <ul>
+                                    <li>created: 12/01/2015</li>
+                                    <li>latest update: 02/11/2016</li>
+                                    <li>by: Gilles Migliori</li>
+                                    <li>email: <a href="mailto:&#103;&#105;&#108;&#108;&#101;&#115;&#46;&#109;&#105;&#103;&#108;&#105;&#111;&#114;&#105;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#103;&#105;&#108;&#108;&#101;&#115;&#46;&#109;&#105;&#103;&#108;&#105;&#111;&#114;&#105;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p><strong>TinyMce Bootstrap plugin adds a Bootstrap toolbar to tinyMce in which you can access to visual editors to create/edit the following Bootstrap elements :</strong></p>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-5 col-lg-4">
+                                    <ul>
+                                        <li>Buttons (+ icons)</li>
+                                        <li>Icons</li>
+                                        <li>Images</li>
+                                        <li>Tables</li>
+                                        <li>Templates (create only)</li>
+                                        <li>Breadcrumbs</li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6 col-md-5 col-lg-4">
+                                    <ul>
+                                        <li>Paginations</li>
+                                        <li>Pagers</li>
+                                        <li>Labels</li>
+                                        <li>Badges</li>
+                                        <li>Alerts</li>
+                                        <li>Panels</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p>Each element is customizable with usual Bootstrap options</p>
+                            <p><strong>You can use your own Bootstrap css, wich will be directly rendered either in tinyMce editor and plugin visual editors.</strong></p>
+                            <p>The new <strong>Snippet</strong> tool allows to create and store / recall <strong>any custom code snippet</strong>, Bootstrap or not.</p>
+                            <p>You can for example easily store and reuse in one click :<br>Bootstrap Modal, Carousel, Navbar, Navbar Tabs, Nav Tabs, Accordion, Popover, ... </p>
+                            <p>Create <strong>your own snippets</strong> easily in just a few clicks.</p>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 id="requirements">Requirements</h2>
+                        <div class="mb-md">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <p>TinyMce Bootstrap plugin uses php, so you need to run php to test on localhost.</p>
+                                    <p><a href="http://www.tinymce.com/download/download.php" target="_blank">tinyMce</a></p>
+                                    <p><a href="http://jquery.com/download/">jQuery</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 id="quick-start-guide">Quick Start Guide</h2>
+                        <div class="mb-md">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                        <ol>
+                                            <li>Download and unzip latest tinyMce at <a href="http://www.tinymce.com/download/download.php" target="_blank">http://www.tinymce.com/download/download.php</a></li>
+                                            <li>Copy <strong>plugin/bootstrap</strong> dir to your tinyMce <strong>plugins</strong> dir</li>
+                                            <li>include <a href="http://jquery.com/download/">jQuery</a> to your page </li>
+                                            <li>
+                                                Add Bootstrap plugin to tinyMce plugins &amp; toolbar :
+                                    <pre class="line-numbers"><code class="language-javascript">
+                                    &lt;script type=&quot;text/javascript&quot;&gt;
+                                    tinymce.init({
+                                        selector: &quot;textarea&quot;,
+                                        plugins: [
+                                            &quot;bootstrap&quot;
+                                        ],
+                                        bootstrapConfig: {
+                                            &#039;imagesPath&#039;: &#039;/tinymce-bootstrap-plugin/examples/img/&#039; // replace with your images folder path
+                                        },
+                                        toolbar: &quot;bootstrap&quot;
+                                    });
+                                    &lt;/script&gt;
+                                    </code></pre>
+                                            </li>
+                                            <li>To <a href="#use-your-own-bootstrap-css">use your own Bootstrap css</a>, <a href="#select-toolbar-elements">select toolbar elements</a> or <a href="#change-language">change language</a>, see corresponding sections in this doc.</li>
+                                        </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 id="options">options (arguments)</h2>
+                        <div class="mb-md">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <p><strong>Tinymce Bootstrap Plugin accepts the following arguments :</strong></p>
+                                    <dl class="dl-horizontal">
+                                        <dt>'type'</dt>
+                                        <dd><code class="language-javascript">'dropdownMenu'</code> or <code class="language-javascript">'buttongroup'</code><br><code class="language-javascript">'buttongroup'</code> shows complete toolbar with icons,<br><code class="language-javascript">'dropdownMenu'</code> shows a single button with dropdown list.</dd>
+                                        <dt>'dropdownText'</dt>
+                                        <dd>Custom dropdown menu text<br>Has no effect if type is 'buttongroup'.<br>Default text is 'Elements'.<br><strong>Example : </strong><code class="language-javascript">'dropdownText': 'Custom Button Text'</code></dd>
+                                        <dt>'bootstrapCssPath'</dt>
+                                        <dd>Default : <code class="language-javascript">'bootstrapCssPath': base_url + '/css/bootstrap.min.css'</code><br>Replace with your own path to use custom Bootstrap</dd>
+                                        <dt>'imagesPath'</dt>
+                                        <dd>Required for Bootstrap Image plugin.<br><strong>Example : </strong><code class="language-javascript">'imagesPath': '/tinymce-bootstrap-plugin/examples/img/'</code></dd>
+                                        <dt>'bootstrapIconFont'</dt>
+                                        <dd>Iconpicker Iconsets - one of the following :<br>
+                                            glyphicon - ionicon - fontawesome - weathericon - mapicon - octicon - typicon - elusiveicon - materialdesign<br><strong>Example : </strong><code class="language-javascript">'bootstrapIconFont': 'materialdesign'</code><br>You have to include font css on your pages : <br><code class="language-javascript">&lt;link href="tinymce/plugins/bootstrap/css/iconpicker/css/material-design-iconic-font.min.css" rel="stylesheet"&gt;</code></dd>
+                                        <dt>'bootstrapElements'</dt>
+                                        <dd>Available elements : btn - icon - table - template - breadcrumb - pagination - pager - label - badge - alert - panel<br><strong>Example : </strong>
+<code class="language-javascript">'bootstrapElements': {
+    'btn': true,
+    'icon': true,
+    'alert': true
+}</code></dd>
+                                        <dt>'tinymceBackgroundColor'</dt>
+                                        <dd>Replace tinyMce's Background color with custom.<br><strong>Example : </strong><code class="language-javascript">'tinymceBackgroundColor': '#fff' // replaces editor background-color with custom</code></dd>
+                                        <dt>Snippet options</dt>
+                                        <dd><code class="language-javascript">'allowSnippetManagement'</code> : enable|disable snippet creation/edition<br><code class="language-javascript">'allow_php'</code> : Allow|disallow php in snippets code<br><code class="language-javascript">'allow_script'</code> : Allow|disallow scripts in snippets code<br>Example :
+<pre><code class="language-javascript">'allowSnippetManagement': true,
+'allow_php' : false,
+'allow_script' : true
+</code></pre>
+                                        </dd>
+                                        <dt>Default options</dt>
+                                        <dd>
+<pre><code class="language-javascript">&lt;script type="text/javascript"&gt;
+tinymce.init({
+    selector: "textarea",
+    plugins: [
+        "bootstrap"
+    ],
+    toolbar: "bootstrap",
+    bootstrapConfig: {
+        'type': 'buttongroup',
+        'bootstrapCssPath': url + '/css/bootstrap.min.css', // <= replace with your custom bootstrap path
+        'imagesPath': url + '/', // replace with your images folder path
+        'bootstrapIconFont': 'glyphicon',
+        'bootstrapElements': {
+            'btn': true,
+            'icon': true,
+            'image': true,
+            'table': true,
+            'template': true,
+            'breadcrumb': true,
+            'pagination': true,
+            'pager': true,
+            'label': true,
+            'badge': true,
+            'alert': true,
+            'panel': true,
+            'snippet': true
+        },
+        'tinymceBackgroundColor': '',
+        'allowSnippetManagement': true,
+        'allow_php': false,
+        'allow_script': false
+    }
+});
+&lt;/script&gt;</code></pre>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 id="examples-with-code">Examples with code</h2>
+                        <div class="mb-md">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <p><a href="examples/example-full.html" target="_blank">Full Example</a></p>
+                                    <p><a href="examples/custom-bootstrap-css.html" target="_blank">Custom Bootstrap css</a></p>
+                                    <p><a href="examples/select-toolbar-elements.html" target="_blank">Select toolbar elements</a></p>
+                                    <p><a href="examples/custom-language.html" target="_blank">Custom language</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 id="use-your-own-bootstrap-css">Use your own bootstrap css</h2>
+                        <div class="mb-md">
+                            <div class="row">
+                                <div class="col-sm-12">
+<pre class="line-numbers"><code class="language-javascript">
+&lt;script type=&quot;text/javascript&quot;&gt;
+tinymce.init({
+    selector: &quot;textarea&quot;,
+    plugins: [
+        &quot;bootstrap&quot;
+    ],
+    toolbar: &quot;bootstrap&quot;,
+    bootstrapConfig: {
+        &#039;bootstrapCssPath&#039;: base_url + &#039;css/bootstrap.min.css&#039;, // &lt;= replace with your custom bootstrap path
+        &#039;imagesPath&#039;: &#039;/tinymce-bootstrap-plugin/examples/img/&#039; // replace with your images folder path
+    }
+});
+&lt;/script&gt;
+</code></pre>
+<h4>To use different background-color than body's in tinyMce</h4>
+<p><strong>Sometimes we need to change tinyMce's background-color : </strong></p>
+<pre class="line-numbers"><code class="language-javascript">
+&lt;script type=&quot;text/javascript&quot;&gt;
+tinymce.init({
+    selector: &quot;textarea&quot;,
+    plugins: [
+        &quot;bootstrap&quot;
+    ],
+    toolbar: &quot;bootstrap&quot;,
+    bootstrapConfig: {
+        &#039;bootstrapCssPath&#039;: base_url + &#039;css/bootstrap.min.css&#039;, // &lt;= replace with your custom bootstrap path
+        &#039;imagesPath&#039;: &#039;/tinymce-bootstrap-plugin/examples/img/&#039;, // replace with your images folder path
+        &#039;tinymceBackgroundColor&#039;: &#039;#fff&#039; // replaces editor background-color with custom
+    }
+});
+&lt;/script&gt;
+</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 id="snippet-tool">Snippet tool</h2>
+                        <div class="mb-md">
+                            <div class="row">
+                                <div class="col-sm-12">
+<p>Snippet tool uses the following options :</p>
+    <dl class="inline">
+        <dt>allowSnippetManagement</dt>
+        <dd>true / false ; default : true</dd>
+        <dt>allow_php (php object attribute)</dt>
+        <dd>true / false ; default : false</dd>
+        <dt>allow_script (php object attribute)</dt>
+        <dd>true / false ; default : false</dd>
+    </dl>
+    <h4>The allowSnippetManagement option</h4>
+    <p>If set to true, the snippet window displays the add / edit / delete buttons</p>
+    <p>You can for example create your snippets, then turn the option off so the future user cannot edit : </p>
+<pre class="line-numbers"><code class="language-javascript">
+&lt;script type=&quot;text/javascript&quot;&gt;
+tinymce.init({
+    selector: &quot;textarea&quot;,
+    plugins: [
+        &quot;bootstrap&quot;
+    ],
+    toolbar: &quot;bootstrap&quot;,
+    bootstrapConfig: {
+        &#039;allowSnippetManagement&#039;: false,
+        &#039;imagesPath&#039;: &#039;/tinymce-bootstrap-plugin/examples/img/&#039; // replace with your images folder path
+    }
+});
+&lt;/script&gt;
+</code></pre>
+<h4>The allow_php / allow_script options</h4>
+<p>These options allow / disallow user to include javascript / php code into snippets.</p>
+<p>For security reasons, they're not configured using tinyMce's bootstrapConfig, but hard-coded in php.</p>
+<p>To turn on / off :</p>
+<ul>
+    <li>open <code class="prettyprint">/tinymce-bootstrap-plugin/examples/tinymce/plugins/bootstrap/snippets/Snippets.php</code></li>
+    <li>find the following lines (near the beginning of file) :<br><code class="prettyprint">private $allow_script = false;</code><br>
+    <code class="prettyprint">private $allow_php    = false;</code></li>
+    <li>set values to <code class="prettyprint">true</code> or <code class="prettyprint">false</code> as you need.</li>
+</ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 id="select-toolbar-elements">Select toolbar elements</h2>
+                        <div class="mb-md">
+                            <div class="row">
+                                <div class="col-sm-12">
+<p>Just list the elements you want to add : </p>
+<pre class="line-numbers"><code class="language-javascript">
+&lt;script type=&quot;text/javascript&quot;&gt;
+tinymce.init({
+    selector: &quot;textarea&quot;,
+    plugins: [
+        &quot;bootstrap&quot;
+    ],
+    toolbar: &quot;bootstrap&quot;,
+    bootstrapConfig: {
+        &#039;bootstrapElements&#039;: {
+            &#039;btn&#039;: true,
+            &#039;icon&#039;: true,
+            &#039;alert&#039;: true
+        },
+        &#039;imagesPath&#039;: &#039;/tinymce-bootstrap-plugin/examples/img/&#039; // replace with your images folder path
+    }
+});
+&lt;/script&gt;
+</code></pre>
+<p>List of available elements : btn, icon, table, template, breadcrumb, pagination, pager, label, badge, alert, panel</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 id="change-language">Change language</h2>
+                        <div class="mb-md">
+                            <div class="row">
+                                <div class="col-sm-12">
+<p>Translations are in <em>tinymce/plugins/bootstrap/langs/</em> directory.</p>
+<ol>
+    <li>Copy the 2 files named <em>fr_FR.js</em> and <em>fr_FR.php</em> (adapt their name to your language)</li>
+    <li>Change the translations into these files</li>
+    <li>Just init tinyMce with your language :
+<pre class="line-numbers"><code class="language-javascript">
+&lt;script type=&quot;text/javascript&quot;&gt;
+tinymce.init({
+    selector: &quot;textarea&quot;,
+    plugins: [
+        &quot;bootstrap&quot;
+    ],
+    bootstrapConfig: {
+        &#039;imagesPath&#039;: &#039;/tinymce-bootstrap-plugin/examples/img/&#039; // replace with your images folder path
+    },
+    toolbar: &quot;bootstrap&quot;,
+    language: &quot;fr_FR&quot;
+});
+&lt;/script&gt;
+</code></pre>
+    </li>
+</ol>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 id="troubleshooting">Troubleshooting</h2>
+                        <div class="mb-md">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <li>
+                                        <h4>Internal Server Error</h4>
+                                        <p>Try to chmod your <code class="language-javascript">/media/editors/tinymce/plugins/bootstrap</code> dir, + sub-directories &amp; files to 755</p>
+                                    </li>
+                                    <li>
+                                        <h4>Images Browsing doesn't show in images plugin</h4>
+                                        <p>If your browser's console  throws a 400 error, it comes from your apache <strong>mod_security.c</strong></p>
+                                        <p>Review your mod_security.c configuration, or try to disable it with htaccess :</p>
+                                        <pre><code><IfModule mod_security.c>
+# Turn the filtering engine On or Off
+SecFilterEngine Off
+</IfModule></code></pre>
+                                    </li>
+                                    <li>
+                                        <h4>Others</h4>
+                                        <p>Please contact me at <a href="gilles.migliori@gmail.com">gilles.migliori@gmail.com</a> - I'll do my best to help</p>
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 id="changelog">Changelog</h2>
+                        <div class="mb-md">
+                            <div class="row">
+                                <div class="col-sm-12">
+<h4>Version 2.3.2 (25/10/2016)</h4>
+<pre><code class="language-none">
+Bug Fix :
+    - fix error when editing same element several times
+</code></pre>
+<h4>Version 2.3.1 (25/10/2016)</h4>
+<pre><code class="language-none">
+Bug Fix :
+    - fix js error with new tinyMce 4.4.3
+Improvements :
+    - update to latest tinyMce 4.4.3
+    - add $.noConflict() to fix conflicts with other libraries
+</code></pre>
+<h4>Version 2.3 (12/09/2016)</h4>
+<pre><code class="language-none">
+Bug Fix :
+    - fix https warnings
+    - fix table &amp; breadcrumb edition
+Improvements :
+    - add option to switch from toolbar to dropdown list
+    - replace Google Pretiffy with Prism (syntax highlighter)
+    - add conf file (bootstrap/conf/conf.php) to allow custom paths for jQuery, Bootstrap's js, codemirror &amp; Prism
+    - add font icon libraries :
+        glyphicon
+        ionicon
+        fontawesome
+        weathericon
+        mapicon
+        octicon
+        typicon
+        elusiveicon
+        materialdesign
+</code></pre>
+<h4 class="mt-lg">Version 2.2.8 (19/08/2016)</h4>
+<pre><code class="language-none">
+Bug Fix :
+    - fix random js issue on getBootstrapStyles() function
+    - fix non-working snippets add due to previous update
+Improvements :
+    - add italian translation (Thanks to Gubithouse)
+</code></pre>
+<h4 class="mt-lg">Version 2.2.7 (22/07/2016)</h4>
+<pre><code class="language-none">
+Improvements :
+    - add shortcuts :
+        - ctrl+enter => &lt;br&gt;
+        - alt+enter  => new paragraph after Bootstrap element
+    - prevent from stripping empty
+    - add uppercase extensions image support
+Bug Fix :
+    - fix issue with absolute images paths in some particular cases
+</code></pre>
+<h4 class="mt-lg">Version 2.2.6 (17/06/2016)</h4>
+<pre><code class="language-none">
+Bug Fix :
+    - fix insertion of Bootstrap elements in Bootstrap tables
+</code></pre>
+<h4 class="mt-lg">Version 2.2.5 (09/05/2016)</h4>
+<pre><code class="language-none">
+Improvement :
+    - prevent from stripping empty
+    - add uppercase extensions image support
+Bug Fix :
+    - fix issue with absolute images paths in some particular cases
+    - fix cursor focus in Bootstrap tables (2nd fix)
+</code></pre>
+<h4 class="mt-lg">Version 2.2.4 (07/12/2015)</h4>
+<pre><code class="language-none">
+Bug Fix :
+    - fix cursor focus in Bootstrap tables
+</code></pre>
+<h4 class="mt-lg">Version 2.2.3 (03/12/2015)</h4>
+<pre><code class="language-none">
+Improvements :
+    - prevent from stripping empty
+    - add codemirror to Snippets add/edit forms
+Bug Fix :
+    - fix snippets preg_match_all php warning with php < 5.4.0
+</code></pre>
+<h4 class="mt-lg">Version 2.2.2 (27/10/2015)</h4>
+<pre><code class="language-none">
+Improvement :
+    - improved templates usage
+Bug Fix :
+    - fix error using very big snippets
+</code></pre>
+<h4 class="mt-lg">Version 2.2.1 (09/08/2015)</h4>
+<pre><code class="language-none">
+Bug Fix :
+    - fix Uncaught SecurityError when used with external iframe on same page
+</code></pre>
+<h4 class="mt-lg">Version 2.2 (09/08/2015)</h4>
+<pre><code class="language-none">
+New Features :
+    - add Joomla integration
+Improvements :
+    - prevent plugin form jQuery conflicts
+</code></pre>
+<h4 class="mt-lg">Version 2.1 (25/07/2015)</h4>
+<pre><code class="language-none">
+Improvements :
+    - update to latest tinyMce 4.2.2
+    - add templates visual aid
+</code></pre>
+<h4 class="mt-lg">Version 2.0 (13/05/2015)</h4>
+<pre><code class="language-none">
+New Features :
+    - add snippet tool
+Improvements :
+    - jshint javascript code
+</code></pre>
+<h4 class="mt-lg">Version 1.1.2 (29/03/2015)</h4>
+<pre><code class="language-none">
+New Features :
+    - add tinymce inline full support
+Bug Fix :
+    - fix alert edit
+</code></pre>
+<h4 class="mt-lg">Version 1.1.1 (30/02/2015)</h4>
+<pre><code class="language-none">
+New Features :
+    - add tinymceBackgroundColor option
+</code></pre>
+<h4 class="mt-lg">Version 1.1.0 (16/02/2015)</h4>
+<pre><code class="language-none">
+New Features :
+    - add Bootstrap images plugin with Filebrowser
+    - all plugins are fully responsive
+</code></pre>
+<h4 class="mt-lg">Version 1.0.0 (19/01/2015)</h4>
+<pre><code class="language-none">
+    Initial Release
+</code></pre>
+
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <h2 id="sources-and-credits">Sources &amp; Credits</h2>
+                        <div class="mb-md">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                        <p>Thanks to :</p>
+                                    <p><a href="http://www.tinymce.com/" target="_blank">tinyMce</a></p>
+                                        <p><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></p>
+                                        <p><a href="http://jquery.com/">jQuery</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </section>
+                </div>
+                <!-- col-sm-10 col-sm-offset-1 -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container-fluid -->
+        <!-- jQuery -->
+        <script src="documentation/assets/js/jquery-1.12.4.min.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="documentation/assets/js/bootstrap.min.js"></script>
+        <!-- Syntax Highlighting -->
+        <script src="documentation/assets/prism/prism.js"></script>
+        <!-- Iscroll -->
+        <script src="documentation/assets/js/nicescroll.min.js"></script>
+        <script type="text/javascript">
+            var myScroll;
+            $(document).ready(function() {
+
+                //handle external links (new window)
+                $('a[href^=http]').bind('click',function(){
+                    window.open($(this).attr('href'));
+                    return false;
+                });
+
+                // nav scroller
+                myScroll = $('#navbar-left-wrapper').niceScroll({
+                    cursorcolor: '#ccc',
+                    cursorborder: '1px solid #212121',
+                    cursorborderradius: "0px"
+                });
+
+                // trigger on load
+                setTimeout(function() {
+                    if($(window.location.hash)[0]) {
+                        $('html, body').animate({
+                            scrollTop: ($(window.location.hash).offset().top - 80)
+                        }, 200);
+                    }
+                }, 2000);
+
+                // scrollspy smoothscroll
+                $("a[href^='#']").not("a[href='#']").on('click', function(e) {
+                    e.preventDefault();
+                    if($(this).attr('href') == '#') {
+                        return false;
+                    }
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: ($(hash).offset().top - 80)
+                    }, 500, function(){
+                        window.location.hash = hash;
+                    });
+
+                });
+            });
+        </script>
+    </body>
+</html>
