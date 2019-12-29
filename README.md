@@ -90,7 +90,7 @@ Use your own Bootstrap css**, wich will be directly rendered either in tinyMce e
 4. Add Bootstrap plugin to tinyMce plugins &amp; toolbar:
 
 ```html
-   `<script>
+   <script>
         tinymce.init({
         selector: "textarea",
         plugins: [
